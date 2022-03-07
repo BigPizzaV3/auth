@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2022-02-07 18:47:03
--- 服务器版本： 5.7.26
--- PHP 版本： 7.3.4
+-- 生成日期： 2022-03-07 11:39:55
+-- 服务器版本： 5.7.37-log
+-- PHP 版本： 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `test`
+-- 数据库： `huangmo`
 --
 
 -- --------------------------------------------------------
@@ -34,16 +33,17 @@ CREATE TABLE `keytab` (
   `superior` int(11) NOT NULL,
   `key_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `user` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `use_date` int(11) NOT NULL
+  `use_date` int(11) NOT NULL,
+  `create_date` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 转存表中的数据 `keytab`
 --
 
-INSERT INTO `keytab` (`id`, `type`, `superior`, `key_name`, `user`, `use_date`) VALUES
-(1, 0, 0, '123', '1231', 1643806925),
-(2, 0, 0, '123', 'huangmo', 1643808575);
+INSERT INTO `keytab` (`id`, `type`, `superior`, `key_name`, `user`, `use_date`, `create_date`) VALUES
+(1, 0, 0, '123', '1231', 1643806925, 0),
+(2, 0, 0, '123', 'huangmo', 1643808575, 0);
 
 -- --------------------------------------------------------
 
@@ -59,18 +59,19 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `register_time` int(11) NOT NULL,
   `hwid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `last_change` int(11) NOT NULL
+  `last_change` int(11) NOT NULL,
+  `amount` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 转存表中的数据 `users`
 --
 
-INSERT INTO `users` (`id`, `type`, `superior`, `username`, `password`, `register_time`, `hwid`, `last_change`) VALUES
-(1, 0, 0, 'huangmo', '$2y$10$vcUpeESBeMqTWijrg88yzeLv8Hbs2snOSJ8AqPwTHiznOZGp.4JUi', 0, '', 1643974751),
-(2, 0, 0, '111', '111', 0, '', 0),
-(3, 0, 0, '123', '123', 1643808575, '', 0),
-(4, 0, 0, 'huangmo1', '$2y$10$G5grGP5NDTBV2ROPTKhFVebvyFExcsRLQznlcJu38kIQRttkhPIjm', 1643808575, '', 0);
+INSERT INTO `users` (`id`, `type`, `superior`, `username`, `password`, `register_time`, `hwid`, `last_change`, `amount`) VALUES
+(1, 2, 0, 'huangmo', '$2y$10$vcUpeESBeMqTWijrg88yzeLv8Hbs2snOSJ8AqPwTHiznOZGp.4JUi', 0, '', 1643974751, 0),
+(2, 0, 0, '111', '111', 0, '', 0, 0),
+(3, 0, 0, 'ssl', '$2y$10$vcUpeESBeMqTWijrg88yzeLv8Hbs2snOSJ8AqPwTHiznOZGp.4JUi', 1643808575, '', 0, 0),
+(4, 0, 0, 'huangmo1', '$2y$10$G5grGP5NDTBV2ROPTKhFVebvyFExcsRLQznlcJu38kIQRttkhPIjm', 1643808575, '', 0, 0);
 
 --
 -- 转储表的索引

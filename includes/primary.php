@@ -104,7 +104,7 @@ function sidebar($text)
 <div class="sidebar-card d-none d-lg-flex">
     <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
     <p class="text-center mb-2"><strong>HUMAN</strong>官方群 </p>
-    <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">加入群聊</a>
+    <a class="btn btn-success btn-sm" href="https://jq.qq.com/?_wv=1027&k=yrYoSHtx">加入群聊</a>
 </div>
 
 </ul>
